@@ -1,5 +1,5 @@
 FROM golang as builder
-RUN go get github.com/cfranco92/redbicicletas-alquiler
+RUN go get github.com/cfranco92/redbicicletas-localizacion
 
 FROM node:14-stretch-slim
 
@@ -20,8 +20,8 @@ RUN npm install
 COPY . /app/
 
 ENV NODE_ENV QA
-ENV PORT 8081
+ENV PORT 8082
 
-EXPOSE 8081
+EXPOSE 8082
 
 CMD [ "node", "server.js" ]
